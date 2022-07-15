@@ -12,7 +12,11 @@ function clickBtn(){
       .then(response =>{
         console.log(response.data)
         const residentTitle = document.createElement(`section`)
-        residentTitle.innerHTML = response.data.name 
+        residentTitle.innerHTML = `
+            <h2>${response.data.name}</h2>
+            <h5>gender:${response.data.gender}</h5>
+            <span>eye-color:${response.data.eye_color}</span>
+        `
         document.body.appendChild(residentTitle)
       })
       .catch(err => console.log(err))
